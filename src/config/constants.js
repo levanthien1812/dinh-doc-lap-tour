@@ -1,5 +1,3 @@
-export const TYPES = {
-    TYPE_1: 'type 1',
-    TYPE_2: 'type 2',
-    TYPE_3: 'type 3',
-}
+export const CHILDREN_PRICE = 15000;
+
+export const ADULT_PRICE = 65000;
