@@ -7,7 +7,7 @@ import LoginPage from './pages/login/LoginPage';
 import Introduction from './pages/Introduction/Introduction';
 import Model from './pages/Model/Model';
 import Review from './pages/Review/Review';
-import Booking from './pages/Booking/Booking';
+import BookTicketPage from './pages/bookticket/BookTicketPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,8 +40,8 @@ function App() {
         },
         {
           path: "/dat-ve",
-          element: <Booking/>
-        },
+          element: <BookTicketPage/>
+        }
       ]
     }
   ])
