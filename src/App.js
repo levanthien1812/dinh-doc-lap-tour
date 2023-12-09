@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logo from "./logo.svg";
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -10,6 +11,18 @@ import PaymentGuidePage from "./pages/paymentguide/PaymentGuidePage";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
 import ModelPage from "./pages/model/ModelPage";
 import Review from "./pages/Review/Review"
+=======
+import './App.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import HomePage from './pages/home/HomePage';
+import SignupPage from './pages/signup/SignupPage';
+import LoginPage from './pages/login/LoginPage';
+import BookTicketPage from './pages/bookticket/BookTicketPage';
+import Introduction from './pages/Introduction/Introduction';
+import Model from './pages/Model/Model';
+import Review from './pages/Review/Review';
+import Booking from './pages/Booking/Booking';
+>>>>>>> 08cb67a (add header, footer page)
 
 function App() {
   const router = createBrowserRouter([
