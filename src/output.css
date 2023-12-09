@@ -671,30 +671,6 @@ video {
   margin-top: 1.5rem;
 }
 
-.me-4 {
-  margin-inline-end: 1rem;
-}
-
-.me-10 {
-  margin-inline-end: 2.5rem;
-}
-
-.ms-10 {
-  margin-inline-start: 2.5rem;
-}
-
-.ms-20 {
-  margin-inline-start: 5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
 }
@@ -709,10 +685,6 @@ video {
 
 .inline-flex {
   display: inline-flex;
-}
-
-.grid {
-  display: grid;
 }
 
 .hidden {
@@ -795,12 +767,12 @@ video {
   max-width: 50%;
 }
 
-.max-w-\[70\%\] {
-  max-width: 70%;
-}
-
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-\[70\%\] {
+  max-width: 70%;
 }
 
 .flex-auto {
@@ -833,10 +805,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-items-center {
-  justify-items: center;
 }
 
 .gap-0 {
@@ -1009,11 +977,6 @@ video {
   padding: 10px;
 }
 
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1037,6 +1000,11 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-64 {
+  padding-left: 16rem;
+  padding-right: 16rem;
 }
 
 .px-8 {
@@ -1089,54 +1057,12 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.px-64 {
-  padding-left: 16rem;
-  padding-right: 16rem;
-}
-
 .pl-3 {
   padding-left: 0.75rem;
 }
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.pt-5 {
-  padding-top: 1.25rem;
-}
-
-.pe-4 {
-  padding-inline-end: 1rem;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .pt-10 {
@@ -1203,9 +1129,8 @@ video {
   font-weight: 500;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.font-normal {
+  font-weight: 400;
 }
 
 .font-semibold {
@@ -1237,10 +1162,6 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.italic {
-  font-style: italic;
 }
 
 .text-blue-950 {
