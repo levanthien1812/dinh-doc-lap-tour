@@ -12,7 +12,6 @@ function ChooseQuantity({ quantity, setQuantity }) {
       <input
         type="text"
         value={quantity}
-        border-r-0
         onChange={(e) => setQuantity(e.target.value)}
         className="px-4 w-14 border border-black border-r-0 text-center"
       />

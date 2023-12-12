@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import ChooseQuantity from "./components/ChooseQuantity";
 import { ADULT_PRICE, CHILDREN_PRICE } from "../../config/constants";
 import dinhDocLapImg from "./../../assets/images/dinh-doc-lap.jpg";
+import format from "date-fns/format";
 
 function BookTicketPage() {
   const [date, setDate] = useState(new Date());
   const [childQuantity, setChildQuantity] = useState(1);
   const [adultQuantity, setAdultQuantity] = useState(1);
 
+  const handleBooking = () => {
+    
+  }
+
   return (
-    <div className="py-8 px-64 bg-slate-100 h-screen">
+    <div className="py-8 2xl:px-64 xl:px-32 bg-slate-100 h-screen">
       <h1 className="text-[48px]">Thông tin đặt vé</h1>
       <p className="text-[#7d7171] mt-4">
         Lưu ý: Vé Dinh Độc Lập không hoàn, không hủy vì vậy Quý khách vui lòng
@@ -24,7 +29,10 @@ function BookTicketPage() {
             type="date"
             name="date"
             required
-            value={date}
+            value={format(date, "yyyy-MM-dd")}
+            onChange={(e) => {
+              setDate(new Date(e.target.value));
+            }}
             className="block bg-white border px-6 py-2 rounded-md mt-2"
           />
         </div>
@@ -82,7 +90,10 @@ function BookTicketPage() {
           </p>
         </div>
         <div>
-          <button className="bg-[#F1C40F] py-3 w-[200px] rounded-lg font-bold">
+          <button
+            className="bg-[#F1C40F] py-3 w-[200px] rounded-lg font-bold"
+            onClick={handleBooking}
+          >
             Đặt vé
           </button>
         </div>
