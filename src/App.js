@@ -1,9 +1,13 @@
-import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import HomePage from './pages/home/HomePage';
-import SignupPage from './pages/signup/SignupPage';
-import LoginPage from './pages/login/LoginPage';
-import BookTicketPage from './pages/bookticket/BookTicketPage';
+import logo from "./logo.svg";
+import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import HomePage from "./pages/home/HomePage";
+import SignupPage from "./pages/signup/SignupPage";
+import LoginPage from "./pages/login/LoginPage";
+import BookTicketPage from "./pages/bookticket/BookTicketPage";
+import BookTicketDetailPage from "./pages/bookticketdetail/BookTicketDetailPage";
+import PaymentGuidePage from "./pages/paymentguide/PaymentGuidePage";
+import CheckoutPage from "./pages/checkout/CheckoutPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -12,26 +16,37 @@ function App() {
       children: [
         {
           index: true,
-          element: <HomePage/>
+          element: <HomePage />,
         },
         {
           path: "/dang-ky",
-          element: <SignupPage/>
+          element: <SignupPage />,
         },
         {
           path: "/dang-nhap",
-          element: <LoginPage/>
+          element: <LoginPage />,
         },
         {
           path: "/dat-ve",
-          element: <BookTicketPage/>
-        }
-      ]
-      
-    }
-  ])
+          element: <BookTicketPage />,
+        },
+        {
+          path: "/chitiet-datve",
+          element: <BookTicketDetailPage />,
+        },
+        {
+          path: "/huongdan-thanhtoan",
+          element: <PaymentGuidePage />,
+        },
+        {
+          path: "/thanhtoan",
+          element: <CheckoutPage />,
+        },
+      ],
+    },
+  ]);
 
-  return <RouterProvider router={router}/>
+  return <RouterProvider router={router} />;
 }
 
 export default App;
