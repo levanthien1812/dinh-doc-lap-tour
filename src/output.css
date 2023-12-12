@@ -830,13 +830,14 @@ video {
   border-right-width: 0px;
 }
 
+
 .border-solid {
   border-style: solid;
 }
 
-.border-black {
+.border-red-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .border-gray-100 {
@@ -913,6 +914,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
+
 
 .bg-transparent {
   background-color: transparent;
@@ -1260,6 +1262,7 @@ video {
 .active\:font-bold:active {
   font-weight: 700;
 }
+
 
 @media (prefers-color-scheme: dark) {
   .dark\:border-gray-700 {
