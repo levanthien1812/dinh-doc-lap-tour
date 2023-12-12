@@ -77,14 +77,14 @@ function BookTicketDetailPage() {
           </li>
           <li>
             Tổng tiền từng loại vé:{" "}
-            <span>Người lớn - {(formData.venguoilon * 40000).toLocaleString()}đ, Trẻ em - {(formData.vetreem * 10000).toLocaleString()}đ</span>
+            <span>Người lớn - {(formData.venguoilon * 65000).toLocaleString()}đ, Trẻ em - {(formData.vetreem * 15000).toLocaleString()}đ</span>
           </li>
           <li>
             Tổng số lượng vé:{" "}
             <span>{formData.venguoilon + formData.vetreem}</span>
           </li>
           <li>
-            Tổng tiền: <span>{((formData.venguoilon * 40000) + (formData.vetreem * 10000)).toLocaleString()}đ</span>
+            Tổng tiền: <span>{((formData.venguoilon * 65000) + (formData.vetreem * 15000)).toLocaleString()}đ</span>
           </li>
           <li>
             Trạng thái đặt vé: <span className="green">{formData.status}</span>
