@@ -8,6 +8,7 @@ import BookTicketPage from "./pages/bookticket/BookTicketPage";
 import BookTicketDetailPage from "./pages/bookticketdetail/BookTicketDetailPage";
 import PaymentGuidePage from "./pages/paymentguide/PaymentGuidePage";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
+import ModelPage from "./pages/model/ModelPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
           path: "/thanhtoan",
           element: <CheckoutPage />,
         },
+        {
+          path: "/mo-hinh",
+          element: <ModelPage />
+        }
       ],
     },
   ]);

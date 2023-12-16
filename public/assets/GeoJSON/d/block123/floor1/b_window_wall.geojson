@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "d_block123_floor1_b_window_wall"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [106.69558625814923, 10.776820059933264, 27.4],
+              [106.69556048937892, 10.776792449086717, 27.4],
+              [106.69557337376408, 10.77680625450999, 27.4]
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
