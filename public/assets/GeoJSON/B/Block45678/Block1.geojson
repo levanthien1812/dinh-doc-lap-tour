@@ -1,0 +1,26 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Landmark 81",
+          "height": 150,
+          "idb": "8"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [  
+                [106.6952033, 10.7772629, 8],
+                [106.6952033, 10.7772629, 8],
+                [106.69571812465107, 10.777004491170034, 8],
+                [106.69560996241468, 10.776898441893675, 8]
+            ]
+          ]
+        },
+        "id": "pp1"
+      }
+    ]
+  }
+  

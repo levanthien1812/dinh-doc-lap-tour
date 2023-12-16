@@ -1,0 +1,25 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "zoneB_stair_1",
+          "note": "right_tren, left_tren, left_duoi, right_duoi"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+                [106.6951366103190,	10.7773138795283],
+                [106.6951931410530,	10.7773767531282],
+                [ 106.695101723482, 10.7774551129915],
+                [ 106.695045192748, 10.7773922393916 ]
+                
+            ]
+          ]
+        }
+      }
+    ]
+  }
+  
