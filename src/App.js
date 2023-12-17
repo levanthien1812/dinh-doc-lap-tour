@@ -9,6 +9,7 @@ import BookTicketDetailPage from "./pages/bookticketdetail/BookTicketDetailPage"
 import PaymentGuidePage from "./pages/paymentguide/PaymentGuidePage";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
 import ModelPage from "./pages/model/ModelPage";
+import Review from "./pages/Review/Review"
 
 function App() {
   const router = createBrowserRouter([
@@ -46,6 +47,10 @@ function App() {
         {
           path: "/mo-hinh",
           element: <ModelPage />
+        },
+        {
+          path: "/reviews",
+          element: <Review />,
         }
       ],
     },
