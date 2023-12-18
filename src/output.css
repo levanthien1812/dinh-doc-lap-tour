@@ -729,12 +729,12 @@ video {
   max-width: 50%;
 }
 
-.max-w-screen-xl {
-  max-width: 1280px;
-}
-
 .max-w-\[70\%\] {
   max-width: 70%;
+}
+
+.max-w-screen-xl {
+  max-width: 1280px;
 }
 
 .flex-auto {
@@ -1146,18 +1146,14 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
-.text-\[\] {
-  color: ;
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-opacity-50 {
