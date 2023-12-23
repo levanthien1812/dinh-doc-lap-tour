@@ -17,13 +17,13 @@ const Footer = () => {
             <div className="gap-8 sm:gap-6 flex">
               <h2 className="mb-6 text-md font-semibold text-[#FFFFFF] uppercase dark:text-white">THEO DÕI CHÚNG TÔI</h2>
               <ul className="text-[#FFFFFF] font-medium flex">
-                <li className='px-3'>
+                <li className='px-3 list-none'>
                   <img src={IconFacebook} alt="IconFacebook" />
                 </li>
-                <li className='px-3'>
+                <li className='px-3 list-none'>
                   <img src={IconTwitter} alt="IconTwitter" />
                 </li>
-                <li className='px-3'>
+                <li className='px-3 list-none'>
                   <img src={IconInstagram} alt="IconInstagram" />
                 </li>
               </ul>
