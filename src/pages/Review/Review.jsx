@@ -39,8 +39,8 @@ const Review = () => {
         </div>
       }
       
-
-      <Reviews />
+      
+      <Reviews isPage={!isMainComponent}/>
       {isMainComponent && <ReviewForm />}
     </div>
   )

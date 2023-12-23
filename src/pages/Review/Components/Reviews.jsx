@@ -3,7 +3,7 @@ import {data} from "./data"
 import IndividualReview from './IndividualReview'
 import Pagination from '@mui/material/Pagination';
 
-const Reviews = () => {
+const Reviews = ({isPage}) => {
     // Get data
     console.log("data");
 console.log(data);
@@ -12,8 +12,13 @@ console.log(data);
         {data.map((item) => 
           <IndividualReview reviewData={item}/>
         )}
-
-    <Pagination count={10} shape="rounded" />
+        {
+          isPage && 
+          <div style={{width: 'fit-content', marginLeft: 'auto', marginRight: 'auto', marginTop: '50px'}}>
+            <Pagination count={10} shape="rounded" size="large" />
+          </div>
+        }
+        
     </div>
   )
 }
