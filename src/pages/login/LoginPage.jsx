@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import AuthenInput from "../../components/inputs/AuthInput";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import AuthService from "../../services/authService";
+import Cookies from "js-cookie";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -25,24 +27,20 @@ function LoginPage() {
     };
 
     try {
-      // const response = await fetch("/api/users/new", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(userData),
-      // });
+      const responseData = await AuthService.signin(userData);
 
-      // if (!response.ok) {
-      //   const { message } = await response.json();
-      //   toast.error(message);
-      //   return;
-      // }
-
-      toast.success("Log in successfully!");
+      if (responseData.id) {
+        console.log(responseData)
+        Cookies.set("user", JSON.stringify(responseData));
+        alert("Đăng nhập thành công!");
+        navigate("/");
+      } else {
+        alert("Email hoặc mật khẩu không đúng! Vui lòng thử lại.");
+        return;
+      }
     } catch (error) {
       console.log(error);
-      toast.error("Oops! Something went wrong!");
+      alert("Có lỗi xảy ra trong quá trình đăng nhập!");
     }
   };
 
