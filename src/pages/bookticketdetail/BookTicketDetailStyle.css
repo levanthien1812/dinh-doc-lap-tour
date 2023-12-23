@@ -15,13 +15,13 @@ ul {
   list-style-position: inside;
 }
 
-.bg-blue > li,
+/* .bg-blue > li,
 div {
   color: #123858;
   font-size: 24px;
   font-weight: 500;
   padding-bottom: 25px;
-}
+} */
 
 .yellow {
   color: #c8ab5c;

@@ -9,6 +9,8 @@ import BookTicketDetailPage from "./pages/bookticketdetail/BookTicketDetailPage"
 import PaymentGuidePage from "./pages/paymentguide/PaymentGuidePage";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
 import ModelPage from "./pages/model/ModelPage";
+import Introduction from "./pages/Introduction/Introduction";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +32,14 @@ function App() {
         {
           path: "/dat-ve",
           element: <BookTicketPage />,
+        },
+        {
+          path: "/gioi-thieu",
+          element: <Introduction />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
         },
         {
           path: "/chitiet-datve",
