@@ -4,8 +4,8 @@ import Logo from "../../assets/images/logo.svg";
 import IconHome from "../../assets/images/ic-home.svg";
 import Review from "../../pages/Review/Review";
 import Introduction from "../../pages/Introduction/Introduction";
-import Model from "../../pages/model/ModelPage";
 import Booking from "../../pages/Booking/Booking";
+import Model from "../../pages/model/ModelPage";
 
 const Header = () => {
   return (
