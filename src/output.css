@@ -1539,3 +1539,8 @@ video {
     padding-right: 16rem;
   }
 }
+
+.swal2-actions {
+  width: 80% !important;
+  flex-direction: column-reverse !important;
+}
