@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import AuthenInput from "../../components/inputs/AuthInput";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import AuthService from "../../services/authService";
+import Cookies from "js-cookie";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -32,26 +34,19 @@ function SignupPage() {
     };
 
     try {
-      // const response = await fetch("/api/users/new", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(userData),
-      // });
+      const responseData = await AuthService.register(userData);
 
-      // if (!response.ok) {
-      //   const { message } = await response.json();
-      //   toast.error(message);
-      //   return;
-      // }
-
-      toast.success("Sign up successfully! Please login to continue.");
-
-      navigate("/login");
+      // console.log(responseData)
+      if (responseData.id) {
+        Cookies.set("user", JSON.stringify(responseData));
+        alert("Đăng ký thành công!");
+        navigate("/");
+      } else {
+        return alert("Đăng ký không thành công! Vui lòng kiểm tra lại thông tin.");
+      }
     } catch (error) {
       console.log(error);
-      toast.error("Oops! Something went wrong!");
+      alert("Có lỗi xảy ra trong quá trình đăng ký!");
     }
   };
 

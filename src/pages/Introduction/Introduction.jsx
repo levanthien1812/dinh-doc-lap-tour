@@ -59,7 +59,7 @@ const Introduction = () => {
         </div>
 
         <div className="w-1/2 p-4 max-w-[70%] bg-white">
-          <div className='p-4'>
+          <div className='p-4 text-[16px]'>
             Dinh Độc Lập được công nhận là Di tích lịch sử văn hóa quốc gia bằng Quyết định số 77A/VHQĐ ngày 25/6/1976 của Bộ trưởng Bộ Văn hóa. Ngày 12 tháng 8 năm 2009, Thủ tướng Chính phủ nước Cộng hòa Xã hội Chủ nghĩa Việt Nam đã ký Quyết định số 1272/QĐ-TTg xếp hạng Di tích lịch sử Dinh Độc Lập là một trong 10 di tích quốc gia đặc biệt đầu tiên của cả nước.
             <br />
             Cơ quan quản lý Di tích lịch sử Dinh Độc Lập là Hội trường Thống Nhất. Căn cứ Quyết định số 709/QĐ-VPCP ngày 14 tháng 6 năm 2013 của Bộ trưởng, Chủ nhiệm Văn phòng Chính phủ qui định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Hội trường Thống Nhất, thì Hội trường Thống Nhất là đơn vị sự nghiệp công lập thuộc Văn phòng Chính phủ có chức năng quản lý, bảo tồn, tôn tạo Di tích lịch sử Dinh Độc Lập; phục vụ đại biểu, khách tham dự các cuộc họp, hội nghị của Chính phủ, Thủ tướng Chính phủ và Văn phòng Chính phủ; các hội nghị và hoạt động khác của Đảng, Nhà nước, Quốc hội khi có yêu cầu; được tận dụng cơ sở vật chất, lao động để kinh doanh dịch vụ theo qui định của pháp luật.
@@ -82,7 +82,6 @@ const Introduction = () => {
           </div>
         </div>
       </div>
-      <h1 className='text-center font-bold text-[30px] text-red-700'>ĐANG UPDATE</h1>
     </div>
   )
 }
