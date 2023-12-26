@@ -3,15 +3,51 @@ import ChooseQuantity from "./components/ChooseQuantity";
 import { ADULT_PRICE, CHILDREN_PRICE } from "../../config/constants";
 import dinhDocLapImg from "./../../assets/images/dinh-doc-lap.jpg";
 import format from "date-fns/format";
+import BookingService from "../../services/bookingService";
+import { useNavigate } from "react-router";
 
 function BookTicketPage() {
   const [date, setDate] = useState(new Date());
   const [childQuantity, setChildQuantity] = useState(1);
   const [adultQuantity, setAdultQuantity] = useState(1);
 
-  const handleBooking = () => {
-    
-  }
+  const navigate = useNavigate();
+
+  const handleBooking = async () => {
+    const bookingData = {
+      touringDate: format(new Date(), "yyyy-MM-dd"),
+      quantity: childQuantity + adultQuantity,
+      totalPrice: childQuantity * CHILDREN_PRICE + adultQuantity * ADULT_PRICE,
+      bookingDetails: [
+        {
+          ticketId: 1,
+          quantity: adultQuantity,
+          totalPrice: adultQuantity * ADULT_PRICE,
+        },
+        {
+          ticketId: 2,
+          quantity: childQuantity,
+          totalPrice: childQuantity * CHILDREN_PRICE,
+        },
+      ],
+    };
+
+    try {
+      const responseData = await BookingService.booking(bookingData);
+
+      if (responseData) {
+        alert("Đặt vé thành công! Vui long thanh toán");
+        navigate("/thanhtoan");
+      } else {
+        return alert(
+          "Đăng vé không thành công! Vui lòng kiểm tra lại thông tin."
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Có lỗi xảy ra trong quá trình đặt vé!");
+    }
+  };
 
   return (
     <div className="py-8 2xl:px-64 xl:px-32 bg-slate-100 h-screen">
