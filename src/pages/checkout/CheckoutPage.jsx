@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import dinhDocLapImg from "./../../assets/images/dinh-doc-lap.jpg";
-import "./CheckoutStyle.css";
+import style from "./../bookticketdetail/BookTicketDetailStyle.module.css";
 import momosample from "./../../assets/images/momo-sample.png";
-
+import cookie from "js-cookie";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPage() {
   const [countdown, setCountdown] = useState({
     minutes: 10, // Set the initial minutes
     seconds: 0, // Set the initial seconds
   });
+
+  const navigate = useNavigate();
+
+  const totalPrice = cookie.get("totalPrice");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,30 +51,10 @@ function CheckoutPage() {
     status: "Đã Duyệt",
   });
 
-  useEffect(() => {
-    //try {
-    // const response = await fetch("/api/users/new", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(userData),
-    // });
-    // if (!response.ok) {
-    //   const { message } = await response.json();
-    //   toast.error(message);
-    //   return;
-    // }
-    //} catch (error) {
-    //  console.log(error);
-    // Handle the error here, e.g., show an error message
-    //  }
-  });
-
   const swalCustom = Swal.mixin({
     customClass: {
-      cancelButton: "cancel",
-      confirmButton: "confirm",
+      cancelButton: style.cancel,
+      confirmButton: style.confirm,
     },
     buttonsStyling: false,
   });
@@ -89,7 +74,7 @@ function CheckoutPage() {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //add function to trigger when press this button
+          navigate("/chitiet-datve");
         }
       });
   };
@@ -111,38 +96,37 @@ function CheckoutPage() {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //add function to trigger when press this button "về trang chủ"
+          navigate("/");
         } else if (result.isDismissed) {
-          //add function when trigger when press "thử lại"
+          navigate("/huongdan-thanhtoan");
         }
       });
   };
 
-  const [isSuccess, setIsSuccess] = useState(true);
+  const handleBack = () => {
+    fail();
+  };
 
-  const handleButtonClick = () => {
-    if (isSuccess) {
-      success();
-    } else {
-      fail();
-    }
-
-    // Toggle the isSuccess state for the next click
-    setIsSuccess((prevIsSuccess) => !prevIsSuccess);
+  const handlePayment = () => {
+    success();
   };
 
   return (
-    <div className="w-full bg-gray container">
-      <div className="flex justify-between px-16 py-12">
-        <div className="col-5">
-          <div className="grid payment-info w-full px-12">
-            <p className="justify-center flex b fs-25 py-6">
+    <div className={`${style.container} ${style.w_100} ${style.bg_gray}`}>
+      <div className={`${style.flex} ${style.justify_between} px-16 py-12`}>
+        <div className={`${style.col_5}`}>
+          <div
+            className={`${style.grid} ${style.payment_info} ${style.w_full} px-12`}
+          >
+            <p
+              className={`${style.justify_center} ${style.flex} ${style.b} ${style.fs_25} py-6`}
+            >
               THÔNG TIN THANH TOÁN
             </p>
             <div>
               <h1>Nhà cung cấp</h1>
-              <h2 className="flex align-center">
-                <img src={dinhDocLapImg} width={150} className="px-6" />
+              <h2 className={`${style.flex} ${style.align_center}`}>
+                <img src={dinhDocLapImg} width={150} className={`px-6`} />
                 BAN QUAN LY DINH DOC LAP
               </h2>
               <hr />
@@ -160,37 +144,45 @@ function CheckoutPage() {
               </h5>
               <hr />
             </div>
-            <div className="payment-price">
+            <div className={`${style.payment_price}`}>
               <h1>Số tiền</h1>
-              <h2>
-                {(
-                  formData.venguoilon * 65000 +
-                  formData.vetreem * 15000
-                ).toLocaleString()}{" "}
-                vnđ
-              </h2>
+              <h2>{totalPrice + " "}vnđ</h2>
             </div>
           </div>
         </div>
-        <div className="grid py-12">
-          <img src={momosample} className="img-payment" />
+        <div
+          className={`${style.grid} py-12 px-12 ${style.justify_items_center}`}
+        >
+          <img src={momosample} className={`${style.img_payment}`} />
+          <div>
+            <button className={`${style.btn_pay} mt-8`} onClick={handlePayment}>
+              Thanh toán
+            </button>
+          </div>
         </div>
       </div>
-      <div className="flex">
-        <div className="expire-time grid py-2 col-4">
-          <p className="text-center py-3">Đơn hàng sẽ hết hạn sau:</p>
-          <div className="flex justify-center">
-            <div className="grid justify-items-center">
+      <div className={`${style.flex}`}>
+        <div
+          className={`${style.expire_time} ${style.grid} py-2 ${style.col_4}`}
+        >
+          <p className={`${style.text_center} py-3`}>
+            Đơn hàng sẽ hết hạn sau:
+          </p>
+          <div className={`${style.flex} ${style.justify_center}`}>
+            <div className={`${style.grid} ${style.justify_items_center}`}>
               <h1>{countdown.minutes}</h1>
               <h2>Phút</h2>
             </div>
-            <div className="grid justify-items-center">
+            <div className={`${style.grid} ${style.justify_items_center}`}>
               <h1>{countdown.seconds}</h1>
               <h2>Giây</h2>
             </div>
           </div>
         </div>
-        <button className="btn-quayve col-2" onClick={handleButtonClick}>
+        <button
+          className={`${style.btn_quayve} ${style.col_2}`}
+          onClick={handleBack}
+        >
           Quay về
         </button>
       </div>
