@@ -4,8 +4,7 @@
       {
         "type": "Feature",
         "properties": {
-          "Building name": "zoneB_side_door",
-          "Note": "lv1_r, lv4_r, lv4_r + 800, lv1_r + 800"
+          "Building name": "zoneB_side_door"
         },
         "geometry": {
           "type": "MultiPolygon",
