@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 import IconHome from "../../assets/images/ic-home.svg";
@@ -6,9 +6,17 @@ import Review from "../../pages/Review/Review";
 import Introduction from "../../pages/Introduction/Introduction";
 import Booking from "../../pages/Booking/Booking";
 import Model from "../../pages/model/ModelPage";
+import Cookies from "js-cookie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-  
+  const [user, setUser] = useState(null);
+  const [shownPopup, setShownPopup] = useState(false);
+
+  useEffect(() => {
+    setUser(JSON.parse(Cookies.get("user") || null));
+  }, []);
 
   return (
     <header className="bg-[#123858]">
@@ -23,12 +31,53 @@ const Header = () => {
           </a>
 
           <div className="flex items-center lg:order-2 pb-0">
-            <a
-              href="/dang-nhap"
-              className="text-white hover:bg-[#C1A559]/90 no-underline focus:ring-4 bg-[#C1A559] focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-            >
-              ĐĂNG NHẬP
-            </a>
+            {!user && (
+              <a
+                href="/dang-nhap"
+                className="text-white hover:bg-[#C1A559]/90 no-underline focus:ring-4 bg-[#C1A559] focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+              >
+                ĐĂNG NHẬP
+              </a>
+            )}
+            {user && (
+              <div className="relative">
+                <button onClick={() => setShownPopup((prev) => !prev)}>
+                  <span className="text-white/60 no-underline uppercase text-[20px]">
+                    {user.name}
+                  </span>
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="text-[20px] text-white/60 ms-2"
+                  />
+                </button>
+                {shownPopup && (
+                  <div className="absolute top-24 left-0 flex flex-col">
+                    <button
+                      className="bg-[#123858] whitespace-nowrap px-6 py-2 font-normal"
+                      onClick={() => setShownPopup(false)}
+                    >
+                      <Link
+                        to={"/profile"}
+                        className="no-underline text-white/60 hover:text-yellow-500"
+                      >
+                        Trang cá nhân
+                      </Link>
+                    </button>
+                    <button
+                      className="bg-[#123858]  whitespace-nowrap px-6 py-2 font-normal"
+                      onClick={() => setShownPopup(false)}
+                    >
+                      <Link
+                        to={"/chitiet-datve"}
+                        className="no-underline text-white/60 hover:text-yellow-500"
+                      >
+                        Chi tiết đặt vé
+                      </Link>
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
@@ -129,16 +178,6 @@ const Header = () => {
                 >
                   ĐÁNH GIÁ
                 </NavLink>
-              </li>
-              <li>
-                <a
-                  to="#"
-                  className={
-                    "block no-underline text-[20px] py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 text-white/60"
-                  }
-                >
-                  LIÊN HỆ
-                </a>
               </li>
             </ul>
           </div>
