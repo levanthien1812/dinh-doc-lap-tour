@@ -3692,10 +3692,197 @@ function Map() {
           },
         });
 
+        const zoneB_block45678_black_decor_column = new GeoJSONLayer({
+          url: "/assets/GeoJSON/B/Block45678/floor1/column/column_black_decor.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 7,
+                  material: {
+                    color: "gray",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const b_block123_floor2_wall1 = new GeoJSONLayer({
+          url: "/assets/GeoJSON/b/block123/floor2/wall1.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 12.1,
+                  material: {
+                    color: "#ffecd4",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const b_block123_floor2_wall2 = new GeoJSONLayer({
+          url: "/assets/GeoJSON/b/block123/floor2/wall2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.21,
+                  material: {
+                    color: "#ffecd4",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const b_block123_floor2_wall3 = new GeoJSONLayer({
+          url: "/assets/GeoJSON/b/block123/floor2/wall3.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 2.42,
+                  material: {
+                    color: "#ffecd4",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const b_block123_floor2_window_balcony = new GeoJSONLayer({
+          url: "/assets/GeoJSON/b/block123/floor2/window_balcony.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 121 / 75,
+                  material: {
+                    color: "white",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const b_block123_floor1_a_window_top_bottom = new GeoJSONLayer({
+          url: "/assets/GeoJSON/B/Block123/floor1/a/window/window_top_bottom.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.2,
+                  material: {
+                    color: "#d9c3a3",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const b_block123_floor1_b_window_top_bottom = new GeoJSONLayer({
+          url: "/assets/GeoJSON/B/Block123/floor1/b/window/window_top_bottom.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1,
+                  material: {
+                    color: "#d9c3a3",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const zoneB_block123_floor1_a_window_side_window = new GeoJSONLayer({
+          url: "/assets/GeoJSON/B/Block123/floor1/a/window/side_window.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 5,
+                  material: {
+                    color: "#d9c3a3",
+                  },
+                  edges: {
+                    type: "solid", // autocasts as new SolidEdges3D()
+                    color: "transparent",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         const map = new Map({
           basemap: "topo-vector",
           ground: "world-elevation",
           layers: [
+            zoneB_block123_floor1_a_window_side_window,
+            b_block123_floor1_b_window_top_bottom,
+            b_block123_floor1_a_window_top_bottom,
             block123_floor2_wall3,
             block123_floor2_window_balcony,
             block123_floor2_wall2,
@@ -3735,6 +3922,10 @@ function Map() {
             d_block123_floor1_a_window_side_window,
             d_block123_floor1_a_window_top_bottom,
             d_block123_floor1_d_window_top_bottom,
+            b_block123_floor2_window_balcony,
+            b_block123_floor2_wall3,
+            b_block123_floor2_wall2,
+            b_block123_floor2_wall1,
             b_stair_lvl1,
             b_stair_lvl2,
             b_stair_lvl3,
@@ -3761,6 +3952,7 @@ function Map() {
             zoneB_frontA_column,
             zoneB_block45678_small_column,
             zoneB_block45678_black_column,
+            zoneB_block45678_black_decor_column,
             b_floor1_inside_columns_decor,
             b_floor1_roof_columns,
             b_floor1_room,
