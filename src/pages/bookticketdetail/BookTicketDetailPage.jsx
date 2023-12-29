@@ -146,7 +146,7 @@ function BookTicketDetailPage() {
           <li>
             Trạng thái đặt vé:{" "}
             <span className={`${style.green}`}>
-              {formData.status === 0 ? "Đã duyệt" : "Chờ duyệt"}
+              {formData.status === 0 ? "Chờ duyệt" : "Đã duyệt"}
             </span>
           </li>
         </ul>

@@ -8,6 +8,8 @@ import Booking from "../../pages/Booking/Booking";
 import Model from "../../pages/model/ModelPage";
 
 const Header = () => {
+  
+
   return (
     <header className="bg-[#123858]">
       <nav className="sticky top-0 z-30 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
