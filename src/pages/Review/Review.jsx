@@ -52,7 +52,7 @@ const Review = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          let url = 'http://khoahocsub:9090/api/reviews/filter?'
+          let url = 'http://khoahocsub.com:9090/api/reviews/filter?'
           if(rateFilter != null){
             url += "rate=" + rateFilter
           }
