@@ -69,7 +69,7 @@ function CheckoutPage() {
   const success = () => {
     swalCustom
       .fire({
-        title: "Thanh toán thành công!",
+        title: "Vui lòng đợi duyệt!",
         text: "Chúng tôi sẽ tiến hành xác nhận trong vòng 24h.Nếu có bất kỳ lỗi gì từ phía chúng tôi hoặc bạn thanh toán THIẾU thì chúng tôi sẽ hoàn trả lại tiền.",
         imageUrl: "assets/images/success.png",
         imageWidth: 80,
