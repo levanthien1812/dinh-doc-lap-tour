@@ -11,7 +11,7 @@ function HomePage() {
       <div style={{paddingBottom: '20px'}} className='max-w-screen-xl mx-auto mt-2 mb-2 flex items-center justify-center'>
         <img src={Homepgae} alt="homepage" />        
       </div>
-      <div className='bg-[#EBEBEB]'> 
+      <div className='bg-[#EBEBEB] pb-0'> 
         <section className='max-w-[1000px] mx-auto' style={{paddingTop: '60px'}}>
           <div className="flex">
             <div className="w-1/2 p-4 max-w-[50%] flex items-center justify-center flex-col">
@@ -32,7 +32,7 @@ function HomePage() {
           </div>
         </section>
         <div style={{paddingTop: '90px', paddingBottom: '10px'}}>
-          <div className='flex position: relative items-center justify-center'>
+          <div className='flex position: relative items-center justify-center pb-0'>
             <img src={Trungbay} alt="trung bay" />
             <div className='position: absolute justify-center items-center text-center max-w-[40%] text-white flex flex-col'>
               <span className='text-[40px] text-white' >

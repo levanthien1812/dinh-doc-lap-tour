@@ -47,7 +47,6 @@ function BookTicketPage() {
       console.log(responseData);
 
       if (responseData) {
-        alert("Đặt vé thành công! Vui long thanh toán");
         Cookies.set("totalPrice", responseData.totalPrice);
         Cookies.set("bookingId", responseData.id);
         navigate("/huongdan-thanhtoan");

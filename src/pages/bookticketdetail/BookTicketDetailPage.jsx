@@ -94,14 +94,14 @@ function BookTicketDetailPage() {
         className={`${style.grid} ${style.col_7} py-8 px-8 ${style.info_card}`}
       >
         <ul className={`${style.bg_blue} py-8 px-8`}>
-          <li>Mã đặt vé: {formData.id}</li>
-          <li>
+          <li className="pb-6">Mã đặt vé: {formData.id}</li>
+          <li className="pb-6">
             Ngày đặt:{" "}
             <span>{formData.bookingDate?.toLocaleDateString("vi-VN")}</span>
           </li>
-          <li>Thông tin khách hàng:</li>
-          <div className={`${style.client_info}`}>
-            <div className={`${style.flex} justify-between`}>
+          <li className="pb-6">Thông tin khách hàng:</li>
+          <div className={`${style.client_info}`} pb-6>
+            <div className={`${style.flex} justify-between pb-6 `}>
               <div className={`${style.unset_p} ${style.dark_blue}`}>
                 Họ và tên: <span>{user?.name}</span>
               </div>
@@ -109,31 +109,31 @@ function BookTicketDetailPage() {
                 ID: <span>{user?.id}</span>
               </div>
             </div>
-            <div className={`${style.dark_blue}`}>
+            <div className={`${style.dark_blue} pb-6`}>
               SĐT: <span>{user?.phone}</span>
             </div>
-            <div className={`${style.dark_blue}`}>
+            <div className={`${style.dark_blue} pb-6`}>
               Email: <span>{user?.email}</span>
             </div>
           </div>
-          <li>
+          <li className="pb-6">
             Số lượng mỗi loại vé:{" "}
             <span>
               Người lớn - {formData.venguoilon}, Trẻ em - {formData.vetreem}
             </span>
           </li>
-          <li>
+          <li className="pb-6">
             Tổng tiền từng loại vé:{" "}
             <span>
               Người lớn - {formData.nguoilonPrice}đ, Trẻ em -{" "}
               {formData.treemPrice}đ
             </span>
           </li>
-          <li>
+          <li className="pb-6">
             Tổng số lượng vé:{" "}
             <span>{formData.venguoilon + formData.vetreem}</span>
           </li>
-          <li>
+          <li className="pb-6">
             Tổng tiền:{" "}
             <span>
               {(
@@ -143,7 +143,7 @@ function BookTicketDetailPage() {
               đ
             </span>
           </li>
-          <li>
+          <li className="pb-6">
             Trạng thái đặt vé:{" "}
             <span className={`${style.green}`}>
               {formData.status === 0 ? "Đã duyệt" : "Chờ duyệt"}
