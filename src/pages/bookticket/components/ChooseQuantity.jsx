@@ -4,7 +4,11 @@ function ChooseQuantity({ quantity, setQuantity }) {
   return (
     <div className="flex gap-0">
       <button
-        onClick={() => setQuantity((prev) => prev - 1)}
+        onClick={() =>
+          setQuantity((prev) => {
+            return prev > 1 ? prev - 1 : prev;
+          })
+        }
         className="bg-white border border-black px-3 active:bg-slate-300 border-r-0"
       >
         -
