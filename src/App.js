@@ -11,6 +11,7 @@ import CheckoutPage from "./pages/checkout/CheckoutPage";
 import ModelPage from "./pages/model/ModelPage";
 import Introduction from "./pages/Introduction/Introduction";
 import Profile from "./pages/Profile/Profile";
+import Review from "./pages/Review/Review";
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +57,10 @@ function App() {
         {
           path: "/mo-hinh",
           element: <ModelPage />
+        },
+        {
+          path: "/reviews",
+          element: <Review />
         }
       ],
     },
