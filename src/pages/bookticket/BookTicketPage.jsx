@@ -62,6 +62,17 @@ function BookTicketPage() {
     }
   };
 
+  const handleDateChange = (e) => {
+    const chosenDate = e.target.value;
+
+    if (new Date(chosenDate) <= new Date()) {
+      alert("Vui lòng chọn ngày bắt đầu từ hôm nay!");
+      setDate(new Date());
+    } else {
+      setDate(new Date(chosenDate));
+    }
+  };
+
   return (
     <div className="py-8 2xl:px-64 xl:px-32 bg-slate-100 h-screen">
       <h1 className="text-[48px]">Thông tin đặt vé</h1>
@@ -79,9 +90,7 @@ function BookTicketPage() {
             name="date"
             required
             value={format(date, "yyyy-MM-dd")}
-            onChange={(e) => {
-              setDate(new Date(e.target.value));
-            }}
+            onChange={handleDateChange}
             className="block bg-white border px-6 py-2 rounded-md mt-2"
           />
         </div>
