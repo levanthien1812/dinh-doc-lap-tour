@@ -1,17 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChooseQuantity from "./components/ChooseQuantity";
 import { ADULT_PRICE, CHILDREN_PRICE } from "../../config/constants";
 import dinhDocLapImg from "./../../assets/images/dinh-doc-lap.jpg";
 import format from "date-fns/format";
 import BookingService from "../../services/bookingService";
 import { useNavigate } from "react-router";
+import Cookies from "js-cookie";
 
 function BookTicketPage() {
   const [date, setDate] = useState(new Date());
   const [childQuantity, setChildQuantity] = useState(1);
   const [adultQuantity, setAdultQuantity] = useState(1);
-
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    if (!Cookies.get("user")) {
+      navigate("/dang-nhap");
+    } else {
+      setUser(JSON.parse(Cookies.get("user") || null));
+    }
+  }, []);
 
   const handleBooking = async () => {
     const bookingData = {
@@ -33,11 +42,15 @@ function BookTicketPage() {
     };
 
     try {
-      const responseData = await BookingService.booking(bookingData);
+      const responseData = await BookingService.booking(user.id, bookingData);
+
+      console.log(responseData);
 
       if (responseData) {
         alert("Đặt vé thành công! Vui long thanh toán");
-        navigate("/thanhtoan");
+        Cookies.set("totalPrice", responseData.totalPrice);
+        Cookies.set("bookingId", responseData.id);
+        navigate("/huongdan-thanhtoan");
       } else {
         return alert(
           "Đăng vé không thành công! Vui lòng kiểm tra lại thông tin."

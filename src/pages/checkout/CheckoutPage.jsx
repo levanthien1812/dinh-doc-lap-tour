@@ -5,6 +5,7 @@ import momosample from "./../../assets/images/momo-sample.png";
 import cookie from "js-cookie";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function CheckoutPage() {
   const [countdown, setCountdown] = useState({
@@ -13,6 +14,12 @@ function CheckoutPage() {
   });
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!Cookies.get("user")) {
+      navigate("/dang-nhap");
+    }
+  }, []);
 
   const totalPrice = cookie.get("totalPrice");
 
