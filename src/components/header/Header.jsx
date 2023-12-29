@@ -66,53 +66,74 @@ const Header = () => {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 list-none">
-              <li
-                href="#"
-                className="mt-1 block no-underline py-2 pr-4 pl-3 text-white/60 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
-              >
-                <img
-                  src={IconHome}
-                  className="mr-3 h-5 sm:h-5"
-                  alt="icon-home"
-                />
+              <li>
+                <NavLink
+                  end
+                  to="/"
+                  className={({ isActive }) =>
+                    "mt-1 block no-underline text-[20px] py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white " +
+                    (isActive ? "text-yellow-500" : "text-white/60")
+                  }
+                  aria-current="page"
+                >
+                  <img
+                    src={IconHome}
+                    className="mr-3 h-5 sm:h-5"
+                    alt="icon-home"
+                  />
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/gioi-thieu"
-                  className="block no-underline text-[20px] py-2 pr-4 pl-3 text-white/60 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                <NavLink
+                  to="/gioi-thieu"
+                  className={({ isActive }) =>
+                    "block no-underline text-[20px] py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white " +
+                    (isActive ? "text-yellow-500" : "text-white/60")
+                  }
                   aria-current="page"
                 >
                   GIỚI THIỆU
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/mo-hinh"
-                  className="block no-underline text-[20px] py-2 pr-4 pl-3 text-white/60 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/mo-hinh"
+                  className={({ isActive }) =>
+                    "block no-underline text-[20px] py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 " +
+                    (isActive ? "text-yellow-500" : "text-white/60")
+                  }
                 >
                   MÔ HÌNH
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/dat-ve"
-                  className="block no-underline text-[20px] py-2 pr-4 pl-3 text-white/60 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/dat-ve"
+                  className={({ isActive }) =>
+                    "block no-underline text-[20px] py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 " +
+                    (isActive ? "text-yellow-500" : "text-white/60")
+                  }
                 >
                   ĐẶT VÉ
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/reviews"
-                  className="block no-underline text-[20px] py-2 pr-4 pl-3 text-white/60 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/reviews"
+                  className={({ isActive }) =>
+                    "block no-underline text-[20px] py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 " +
+                    (isActive ? "text-yellow-500" : "text-white/60")
+                  }
                 >
-                  REVIEWS
-                </a>
+                  ĐÁNH GIÁ
+                </NavLink>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block no-underline text-[20px] py-2 pr-4 pl-3 text-white/60 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  to="#"
+                  className={
+                    "block no-underline text-[20px] py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 text-white/60"
+                  }
                 >
                   LIÊN HỆ
                 </a>

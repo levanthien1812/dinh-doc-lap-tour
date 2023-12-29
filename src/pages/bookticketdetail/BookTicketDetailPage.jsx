@@ -3,6 +3,8 @@ import dinhDocLapImg from "./../../assets/images/dinh-doc-lap.jpg";
 import style from "./BookTicketDetailStyle.module.css";
 import axios from "axios"; // Thêm thư viện axios
 import cookie from "js-cookie";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router";
 
 function BookTicketDetailPage() {
   const [formData, setFormData] = useState({
@@ -16,55 +18,59 @@ function BookTicketDetailPage() {
     nguoilonPrice: 0,
   });
 
-  const [userData, setUserData] = useState({
-    name: "",
-    phone: "",
-    id: "",
-    email: "",
-  });
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
 
-  const id = 1;
+  console.log(user)
 
   useEffect(() => {
-    const fetchData = () => {
-      axios
-        .get(`http://localhost:9090/api/bookings/${id}`)
-        .then((response) => {
-          setUserData(response.data.user);
+    if (!Cookies.get("user")) {
+      navigate("/dang-nhap");
+    } else {
+      setUser(JSON.parse(Cookies.get("user")));
+    }
+  }, []);
 
-          let vetrememQuantity = 0;
-          let venguoilonQuantity = 0;
-          let treemPrice = 0;
-          let nguoilonPrice = 0;
+  const bookingId = JSON.parse(Cookies.get("bookingId"));
 
-          response.data.bookingDetails.forEach((detail) => {
-            const { type } = detail.ticket;
-            const quantity = detail.quantity;
-            const price = detail.ticket.price;
+  const fetchData = () => {
+    axios
+      .get(`http://localhost:9090/api/bookings/${bookingId}`)
+      .then((response) => {
+        let vetrememQuantity = 0;
+        let venguoilonQuantity = 0;
+        let treemPrice = 0;
+        let nguoilonPrice = 0;
 
-            if (type === "Trẻ em") {
-              vetrememQuantity += quantity;
-              treemPrice += price * quantity;
-            } else if (type === "Người lớn") {
-              venguoilonQuantity += quantity;
-              nguoilonPrice += price * quantity;
-            }
-          });
-          cookie.set("totalPrice", (treemPrice + nguoilonPrice).toString());
-          setFormData({
-            ...response.data,
-            vetreem: vetrememQuantity, // Initialize vetreem
-            venguoilon: venguoilonQuantity,
-            treemPrice: treemPrice,
-            nguoilonPrice: nguoilonPrice,
-            bookingDate: new Date(response.data.bookingDate), // Convert to Date object
-          });
-        })
-        .catch((error) => {
-          console.error("Lỗi khi tải dữ liệu từ API:", error);
+        response.data.bookingDetails.forEach((detail) => {
+          const { type } = detail.ticket;
+          const quantity = detail.quantity;
+          const price = detail.ticket.price;
+
+          if (type === "Trẻ em") {
+            vetrememQuantity += quantity;
+            treemPrice += price * quantity;
+          } else if (type === "Người lớn") {
+            venguoilonQuantity += quantity;
+            nguoilonPrice += price * quantity;
+          }
         });
-    };
+        cookie.set("totalPrice", (treemPrice + nguoilonPrice).toString());
+        setFormData({
+          ...response.data,
+          vetreem: vetrememQuantity, // Initialize vetreem
+          venguoilon: venguoilonQuantity,
+          treemPrice: treemPrice,
+          nguoilonPrice: nguoilonPrice,
+          bookingDate: new Date(response.data.bookingDate), // Convert to Date object
+        });
+      })
+      .catch((error) => {
+        console.error("Lỗi khi tải dữ liệu từ API:", error);
+      });
+  };
 
+  useEffect(() => {
     fetchData();
   }, []); // Passing an empty dependency array
 
@@ -97,17 +103,17 @@ function BookTicketDetailPage() {
           <div className={`${style.client_info}`}>
             <div className={`${style.flex} justify-between`}>
               <div className={`${style.unset_p} ${style.dark_blue}`}>
-                Họ và tên: <span>{userData.name}</span>
+                Họ và tên: <span>{user?.name}</span>
               </div>
               <div className={`w-1\/4 ${style.unset_p} ${style.dark_blue}`}>
-                ID: <span>{userData.id}</span>
+                ID: <span>{user?.id}</span>
               </div>
             </div>
             <div className={`${style.dark_blue}`}>
-              SĐT: <span>{userData.phone}</span>
+              SĐT: <span>{user?.phone}</span>
             </div>
             <div className={`${style.dark_blue}`}>
-              Email: <span>{userData.email}</span>
+              Email: <span>{user?.email}</span>
             </div>
           </div>
           <li>
@@ -130,7 +136,11 @@ function BookTicketDetailPage() {
           <li>
             Tổng tiền:{" "}
             <span>
-              {(formData.nguoilonPrice + formData.treemPrice).toLocaleString()}đ
+              {(
+                formData.nguoilonPrice * formData.venguoilon +
+                formData.treemPrice * formData.vetreem
+              ).toLocaleString()}
+              đ
             </span>
           </li>
           <li>

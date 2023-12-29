@@ -12,11 +12,13 @@ import ModelPage from "./pages/model/ModelPage";
 import Introduction from "./pages/Introduction/Introduction";
 import Profile from "./pages/Profile/Profile";
 import Review from "./pages/Review/Review";
+import Layout from "./components/layout/Layout";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "",
+      element: <Layout />,
       children: [
         {
           index: true,
