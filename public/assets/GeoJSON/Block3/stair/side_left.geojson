@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "zoneA-side-left"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+          
+          ]
+        ]
+      }
+    }
+  ]
+}

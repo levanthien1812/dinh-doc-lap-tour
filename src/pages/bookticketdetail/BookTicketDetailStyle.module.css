@@ -1,0 +1,306 @@
+.col_5 {
+  width: 41.67%;
+}
+
+.col_7 {
+  width: 58.34%;
+}
+
+.bg_blue {
+  background-color: #eef5fd;
+  border-radius: 25px;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.bg_blue>li,
+div {
+  color: #123858;
+  font-size: 18px;
+}
+
+.yellow {
+  color: #c8ab5c;
+}
+
+.dark {
+  color: #361e15;
+}
+
+.semi_b {
+  font-weight: 500;
+}
+
+.fs_35 {
+  font-size: 35px;
+}
+
+.fs_60 {
+  font-size: 60px;
+}
+
+.grid {
+  display: grid;
+}
+
+.unset_p {
+  padding: unset;
+}
+
+span {
+  color: black;
+}
+
+.green {
+  color: #57e824;
+}
+
+.dark_blue {
+  color: #123858;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.client_info {
+  padding-bottom: 0;
+  margin-left: 34px;
+}
+
+hr {
+  height: 0px;
+  background-color: #000;
+}
+
+.payment_info {
+  background-color: white;
+  border-radius: 14px;
+  border: #7d7171 solid 2px;
+}
+
+.payment_info p {
+  font-size: 25px;
+}
+
+.payment_info h1 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #7d7171;
+  padding-bottom: 15px;
+}
+
+.payment_info h2,
+h3,
+h5 {
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+.payment_info i {
+  font-size: 14px;
+  font-weight: normal;
+  color: #7d7171;
+}
+
+.col_4 {
+  width: 33.34%;
+}
+
+.payment_price h2 {
+  font-size: 22px;
+}
+
+.justify_items_center {
+  justify-items: center;
+}
+
+.justify_evenly {
+  justify-content: space-evenly;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.expire_time {
+  background-color: rgba(255, 48, 172, 0.17);
+  height: 137px;
+  border-radius: 14px;
+  margin-left: 100px;
+}
+
+.expire_time .grid {
+  background-color: rgba(225, 38, 162, 0.38);
+  color: #d329ae;
+  width: 50px;
+  height: 56px;
+  border-radius: 10px;
+  margin: 0 20px 0 20px;
+}
+
+.expire_time p {
+  color: #e0083c;
+  font-size: 19px;
+  font-weight: normal;
+}
+
+.expire_time h1 {
+  font-size: 22px;
+}
+
+.expire_time h2 {
+  font-size: 12px;
+}
+
+.col_2 {
+  width: 16.67%;
+}
+
+.btn_quayve {
+  color: #d329ae;
+  font-size: 15px;
+}
+
+.swal2_success_ring {
+  padding-bottom: 0px;
+}
+
+.swal2_icon {
+  padding-bottom: 0px;
+}
+
+.confirm {
+  background-color: white;
+  color: #000;
+  border: #000 solid 2px;
+  border-radius: 8px;
+  box-shadow: none;
+
+  border-radius: 0.25em;
+  background: initial;
+  font-size: 1em;
+
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
+  font-weight: 500;
+
+  width: 100%;
+  height: 65px;
+}
+
+.cancel {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  border-radius: 8px;
+  box-shadow: none;
+
+  border-radius: 0.25em;
+  font-size: 1em;
+
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
+  font-weight: 500;
+
+  width: 100%;
+  height: 65px;
+}
+
+.no_border {
+  border: 0;
+}
+
+.swal2-actions {
+  width: 80% !important;
+  flex-direction: column-reverse;
+}
+
+.btn_pay {
+  width: 250px;
+  height: 50px;
+  background-color: #f1c40f;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.bg_gray {
+  background-color: #f5f5f5;
+}
+
+.bg_white {
+  background-color: white;
+}
+
+a {
+  text-decoration: underline;
+  color: -webkit-link;
+}
+
+.align_center {
+  align-items: center;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.pr_8 {
+  padding-right: 2rem;
+}
+
+.fs_15 {
+  font-size: 15px;
+}
+
+.l {
+  font-weight: 400;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.fs_22 {
+  font-size: 22px;
+}
+
+div {
+  color: #000;
+}
+
+.flex {
+  display: flex;
+}
+
+.bg_white>div {
+  font-size: 18px;
+}
+
+.bg_white>div>ol {
+  font-weight: normal;
+}
+
+.bg_white>div:last-of-type {
+  font-weight: normal;
+}
+
+.btn_next {
+  width: 250px;
+  height: 50px;
+  background-color: #f1c40f;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 52rem;
+  border-radius: 8px;
+}
