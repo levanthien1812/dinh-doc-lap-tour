@@ -11,6 +11,8 @@ import CheckoutPage from "./pages/checkout/CheckoutPage";
 import ModelPage from "./pages/model/ModelPage";
 import Introduction from "./pages/Introduction/Introduction";
 import Profile from "./pages/Profile/Profile";
+import ForgotPasswork from "./pages/Profile/ForgotPasswork";
+import UpdateProfile from "./pages/Profile/UpdateProfile";
 import Review from "./pages/Review/Review";
 import Layout from "./components/layout/Layout";
 
@@ -63,6 +65,14 @@ function App() {
         {
           path: "/reviews",
           element: <Review />
+        },
+        {
+          path: "/forgot-passwork",
+          element: <ForgotPasswork />
+        },
+        {
+          path: "/update-profile",
+          element: <UpdateProfile />
         }
       ],
     },

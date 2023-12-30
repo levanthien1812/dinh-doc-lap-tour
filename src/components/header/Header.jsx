@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 import IconHome from "../../assets/images/ic-home.svg";
-import Review from "../../pages/Review/Review";
-import Introduction from "../../pages/Introduction/Introduction";
-import Booking from "../../pages/Booking/Booking";
-import Model from "../../pages/model/ModelPage";
 import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -13,10 +9,19 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const [user, setUser] = useState(null);
   const [shownPopup, setShownPopup] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setUser(JSON.parse(Cookies.get("user") || null));
   }, []);
+
+  const handleLogout = () => {
+    Cookies.remove("user");
+    setUser(null);
+    alert("Đăng xuất thành công!");
+    navigate("/");
+  };
+
 
   return (
     <header className="bg-[#123858]">
@@ -51,7 +56,7 @@ const Header = () => {
                   />
                 </button>
                 {shownPopup && (
-                  <div className="absolute top-24 left-0 flex flex-col">
+                  <div className="absolute top-24 left-0 flex flex-col" style={{marginTop: '-40px'}}>
                     <button
                       className="bg-[#123858] whitespace-nowrap px-6 py-2 font-normal"
                       onClick={() => setShownPopup(false)}
@@ -73,6 +78,12 @@ const Header = () => {
                       >
                         Chi tiết đặt vé
                       </Link>
+                    </button>
+                    <button
+                      className="bg-[#123858] text-white/60  hover:text-yellow-500 whitespace-nowrap px-6 py-2 font-normal"
+                      onClick={handleLogout}
+                    >
+                      Logout
                     </button>
                   </div>
                 )}

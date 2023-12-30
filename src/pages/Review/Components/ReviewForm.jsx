@@ -179,7 +179,7 @@ const ReviewForm= ({setReloadData, reloadData}) => {
           Gửi đánh giá 
         </Button> */}
 
-        <button  style={{marginRight: "auto", backgroundColor: "#C8AB5C", color: "white", fontWeight: '500', fontSize: '24px', height: '62px', lineHeight: '62px', padding: '2px 10px 2px 10px', borderRadius: '10px'}} 
+        <button  style={{marginRight: "auto", marginBottom: '20px', backgroundColor: "#C8AB5C", color: "white", fontWeight: '500', fontSize: '24px', height: '62px', lineHeight: '62px', padding: '2px 10px 2px 10px', borderRadius: '10px'}} 
           onClick={handleSubmitForm}>
             Gửi đánh giá 
         </button>
