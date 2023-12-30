@@ -102,7 +102,7 @@ function UpdateProfile() {
       >
         <div className="max-w-[700px] text-white flex flex-col w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div className="flow-root">
-            <h2 className="font-bold text-center text-[30px]">CẬP NHẬT CÁ NHÂN</h2>
+            <h2 className="font-bold text-center text-[30px]">CẬP NHẬT THÔNG TIN CÁ NHÂN</h2>
             <ul role="list" style={{ padding: '60px 40px' }} className="divide-y divide-gray-200 dark:divide-gray-700 list-none">
               <li className='flex justify-between mb-6 border-none align-center'>
                 <div>Email:</div>

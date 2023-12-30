@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 import IconHome from "../../assets/images/ic-home.svg";
+import IconHomeWhite from "../../assets/images/ic-home-white.svg";
 import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +11,7 @@ const Header = () => {
   const [user, setUser] = useState(null);
   const [shownPopup, setShownPopup] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     setUser(JSON.parse(Cookies.get("user") || null));
@@ -21,6 +23,7 @@ const Header = () => {
     alert("Đăng xuất thành công!");
     navigate("/");
   };
+  const isRootUrl = location.pathname === "/";
 
 
   return (
@@ -28,7 +31,7 @@ const Header = () => {
       <nav className="sticky top-0 z-30 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-0">
           <a href="/" className="flex items-center">
-            <img
+          <img
               src={Logo}
               className="mr-3 h-12 sm:h-20"
               alt="DinhDocLap Logo"
@@ -138,11 +141,11 @@ const Header = () => {
                   }
                   aria-current="page"
                 >
-                  <img
-                    src={IconHome}
-                    className="mr-3 h-5 sm:h-5"
-                    alt="icon-home"
-                  />
+                <img
+                  src={isRootUrl ? IconHome : IconHomeWhite}
+                  className="mr-3 h-5 sm:h-5"
+                  alt="icon-home"
+                />
                 </NavLink>
               </li>
               <li>
