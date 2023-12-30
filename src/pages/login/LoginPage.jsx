@@ -34,6 +34,7 @@ function LoginPage() {
         Cookies.set("user", JSON.stringify(responseData));
         alert("Đăng nhập thành công!");
         navigate("/");
+        window.location.reload();
       } else {
         alert("Email hoặc mật khẩu không đúng! Vui lòng thử lại.");
         return;
