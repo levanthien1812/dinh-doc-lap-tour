@@ -3716,7 +3716,7 @@ function Map() {
         });
 
         const b_block123_floor2_wall1 = new GeoJSONLayer({
-          url: "/assets/GeoJSON/b/block123/floor2/wall1.geojson",
+          url: "/assets/GeoJSON/B/Block123/floor2/wall1.geojson",
           renderer: {
             type: "simple",
             symbol: {
@@ -3739,7 +3739,7 @@ function Map() {
         });
 
         const b_block123_floor2_wall2 = new GeoJSONLayer({
-          url: "/assets/GeoJSON/b/block123/floor2/wall2.geojson",
+          url: "/assets/GeoJSON/B/Block123/floor2/wall2.geojson",
           renderer: {
             type: "simple",
             symbol: {
@@ -3762,7 +3762,7 @@ function Map() {
         });
 
         const b_block123_floor2_wall3 = new GeoJSONLayer({
-          url: "/assets/GeoJSON/b/block123/floor2/wall3.geojson",
+          url: "/assets/GeoJSON/B/Block123/floor2/wall3.geojson",
           renderer: {
             type: "simple",
             symbol: {
@@ -3785,7 +3785,7 @@ function Map() {
         });
 
         const b_block123_floor2_window_balcony = new GeoJSONLayer({
-          url: "/assets/GeoJSON/b/block123/floor2/window_balcony.geojson",
+          url: "/assets/GeoJSON/B/Block123/floor2/window_balcony.geojson",
           renderer: {
             type: "simple",
             symbol: {
